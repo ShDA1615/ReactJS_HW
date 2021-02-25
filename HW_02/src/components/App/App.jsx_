@@ -1,0 +1,77 @@
+import React from "react";
+import { Messages } from "../Messages";
+
+class App extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     count: 0
+  //   };
+  //если отключен эксперементальный способ
+  // this.handleClick = this.handleClick.bind(this);
+
+  //}
+
+  state = {
+    count: 0,
+    isShowMessages: true,
+  };
+
+  //эксперемнтальный способ  Изменение состояния по нажатию
+  handleClick = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  toggleMessages = () => {
+    this.setState({ isShowMessages: !this.state.isShowMessages });
+  };
+
+  // неэксперементальный способ
+  // handleClick() {
+  //   console.log(this);
+  //   this.setState({ count: this.state.count + 1 });
+  // };
+
+  render() {
+    return (
+      <div id="test-id">
+        <h2>Hello from Reac</h2>
+        <button onClick={this.toggleMessages}>Toggle Messages</button>
+        {/* {this.state.isShowMessages ? (
+          <Messages
+            messages={["First", "Second", "Third"]}
+            count={this.state.count}
+            handleClick={this.handleClick}
+          />
+        ) : null} */}
+        {
+          this.state.isShowMessages && (
+            <Messages
+            messages={["First", "Second", "Third"]}
+            count={this.state.count}
+            handleClick={this.handleClick}
+          />
+          )
+        }
+
+        {/* <Message text='New 2 messahe' /> */}
+      </div>
+    );
+  }
+}
+
+//const App = () => {
+//return React.createElement('div',{id : 'test-id'}, 'Hello from React');
+
+//Нужно установить babel для JSX
+//npm i -D @babel/cli @babel/core @babel/preset-env @babel/preset-react babel-loader
+//    return <div id='test-id'>
+////              <h2>Hello from Reac</h2>
+<Messages messages={["First", "Second", "Third"]} />;
+//            { /* <Message text='New 2 messahe' /> */}
+//            </div>
+//};
+
+//export default App;
+
+export { App };
