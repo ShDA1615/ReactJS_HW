@@ -1,0 +1,22 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    background-color: #e2e2e2;
+    height: 500px;
+    width: 100%;
+   
+    overflow-y: scroll;
+   /* align-self: flex-end;*/
+  /* margin-right: 0%;*/
+
+}
+
+.layout {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: ​auto​;
+   /* align-items: ​ center​;*/
+    justify-content: ​ center​;
+    flex-direction: ​ column​;
+}
